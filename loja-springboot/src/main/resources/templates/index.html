@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Loja - Página Inicial</title>
+</head>
+<body>
+<h1>Bem-vindo à Loja</h1>
+<form th:action="@{/gestao}" method="get">
+    <button type="submit">Área de Gestão</button>
+</form>
+<form th:action="@{/cliente}" method="get">
+    <button type="submit">Área do Cliente</button>
+</form>
+</body>
+</html>

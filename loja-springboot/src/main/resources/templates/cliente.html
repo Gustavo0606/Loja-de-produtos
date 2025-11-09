@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cliente</title>
+</head>
+<body>
+<h1>Área do Cliente</h1>
+
+<h2>Produtos disponíveis</h2>
+<ul>
+    <li th:each="p : ${produtos}">
+        <strong th:text="${p.nome}">Nome</strong> —
+        R$ <span th:text="${p.preco}">0.00</span> —
+        <span th:text="${p.estoque}">0</span> em estoque
+
+        <form th:action="@{/cliente}" method="post" style="display:inline;">
+            <input type="hidden" name="id" th:value="${p.id}" />
+            <button type="submit">Comprar</button>
+        </form>
+    </li>
+</ul>
+
+<a th:href="@{/}">Voltar</a>
+</body>
+</html>
